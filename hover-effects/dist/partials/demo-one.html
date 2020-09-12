@@ -1,0 +1,215 @@
+<!-- demo one -->
+<div ng-controller="demoOneController as demoOneCtrl">
+  <section class="flex__container">
+    <!-- image 1 -->
+    <div class="flex__item flex__item--first">
+      <p class="flex__text">Make your <span>every </span>day</p>
+      <p class="flex__text">Become a <span>magical </span>day</p>
+      <img src="dist/images/8.jpg" class="flex__img" alt="">
+    </div>
+    <!-- image 2 -->
+    <div class="flex__item flex__item--second">
+      <p class="flex__text">Make yourself <span>happy</span></p>
+      <p class="flex__text">with <span>little </span>things</p>
+      <img src="dist/images/5.jpg" class="flex__img" alt="">
+    </div>
+  </section>
+  
+  <!-- code snippets -->
+  <section class="code__container" ng-show="demoOneCtrl.demoFactory.codeSnippets.demoOneCode">
+    <h3 class="code__heading code__heading--html">html</h3>
+    <pre class="pre"><code hljs>
+
+    <div class="flex__container">
+      <!-- image 1 -->
+      <div class="flex__item flex__item--first">
+        <p class="flex__text">Make your <span>every </span>day</p>
+        <p class="flex__text">Become a <span>magical </span>day</p>
+        <img src="images/1.jpg" class="flex__img" alt="">
+      </div>
+      <!-- image 2 -->
+      <div class="flex__item flex__item--second">
+        <p class="flex__text">Make yourself <span>happy</span></p>
+        <p class="flex__text">with <span>little </span>things</p>
+        <img src="images/2.jpg" class="flex__img" alt="">
+      </div>
+    </div>
+    </code></pre>
+
+    <h3 class="code__heading code__heading--css">css</h3>
+    <pre class="pre pre__css"><code hljs>
+
+    /* container */
+
+    .flex__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 90%;
+      margin: 2em auto;
+      animation: show .5s forwards linear;
+    }
+
+    /* item */
+
+    .flex__item {
+      position: relative;
+      width: 440px;
+      height: 280px;
+      margin: 0.7em;
+      overflow: hidden;
+      transition: all .3s linear;
+    }
+
+    /* image */
+
+    .flex__img {
+      position: absolute;
+      width: 500px;
+      height: auto;
+    }
+
+    /* text */
+
+    .flex__text {
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      position: absolute;
+      box-sizing: border-box;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .flex__text > span {
+      font-weight: 700;
+    }
+
+    /* First demo image */
+
+    .flex__item--first {
+      background: radial-gradient(#444 50%, #000);
+    }
+
+    .flex__item--first .flex__img {
+      left: 50%;
+      transform: translate(-43%, -7%) scale(1.1);
+      transition: all 1.3s cubic-bezier(0.25, 0.25, 0.52, 1.5);
+    }
+
+    .flex__item--first .flex__text {
+      width: 260px;
+      padding: 12px 10px;
+      background-color: #f7f7f7;
+      color: #008ad7;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      opacity: 0;
+      transform: scale(8);
+      transition: all 1.3s cubic-bezier(0.25, 0.25, 0.52, 1.15);
+    }
+
+    .flex__item--first .flex__text:nth-child(1) {
+      top: 50%;
+      left: -300%;
+      z-index: 2;
+    }
+
+    .flex__item--first .flex__text:nth-child(2) {
+      bottom: 50%;
+      right: -300%;
+      background-color: #008ad7;
+      color: #f7f7f7;
+      z-index: 1;
+    }
+
+    .flex__item--first:hover .flex__img {
+      filter: brightness(0.9) contrast(1.6);
+      opacity: 0.6;
+      transform: translate(-50%, -2%) scale(1);
+    }
+
+    .flex__item--first:hover .flex__text:nth-child(1) {
+      top: 31%;
+      left: 50%;
+      transform: translateX(-42%) scale(1);
+      opacity: 1;
+    }
+
+    .flex__item--first:hover .flex__text:nth-child(2) {
+      bottom: 31%;
+      right: 50%;
+      transform: translateX(42%) scale(1);
+      opacity: 1;
+    }
+
+    /* Second demo image */
+
+    .flex__item--second::after {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(transparent 30%, #333);
+      opacity: 0;
+      transition: all .8s linear;
+    }
+
+    .flex__item--second .flex__img {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      transition: all 1.3s cubic-bezier(0.25, 0.25, 0.52, 1);
+    }
+
+    .flex__item--second .flex__text {
+      width: 260px;
+      padding: 12px 10px;
+      background-color: #f7f7f7;
+      color: #78c932;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transform: scale(8, 8);
+      opacity: 0;
+      transition: all 1.3s cubic-bezier(0.25, 0.25, 0.52, 1.15);
+    }
+
+    .flex__item--second .flex__text:nth-child(1) {
+      top: 150%;
+      left: 300%;
+      z-index: 2;
+    }
+
+    .flex__item--second .flex__text:nth-child(2) {
+      bottom: 150%;
+      right: 300%;
+      background-color: #78c932;
+      color: #f7f7f7;
+      z-index: 1;
+    }
+
+    .flex__item--second:hover::after {
+      opacity: 0.6;
+    }
+
+    .flex__item--second:hover .flex__img {
+      transform: translate(-55%, -55%) scale(1);
+    }
+
+    .flex__item--second:hover .flex__text:nth-child(1) {
+      top: 31%;
+      left: 50%;
+      transform: translateX(-42%) scale(1, 1);
+      opacity: 1;
+    }
+
+    .flex__item--second:hover .flex__text:nth-child(2) {
+      bottom: 31%;
+      right: 50%;
+      transform: translateX(42%) scale(1, 1);
+      opacity: 1;
+    }
+
+    </pre></code>
+  </section>
+  <button class="flex__button" ng-bind="demoOneCtrl.demoFactory.changeText()" ng-click="demoOneCtrl.showCode()"></button>
+</div>

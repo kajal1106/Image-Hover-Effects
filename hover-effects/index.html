@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hoverEffects">
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Image Hover Effects</title>
+
+  <link rel="stylesheet" type="text/css" href="dist/css/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="dist/css/styles.min.css"/>
+  <link rel="stylesheet" media="screen" href="dist/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet">
+  
+</head>
+<body>
+<!-- header -->
+<header class="app__header">
+  <h1 class="app__header__text">Image Hover Effects</h1>
+  <h1 class="app__header__description">Collection of ideas for image overlays with text.</h1>
+</header>
+<!-- navigation -->
+<nav class="nav" ng-controller="navController as navCtrl">
+  <ul class="nav__list">
+    <li class="nav__list__item" ng-click="navCtrl.demoFactory.activeButton = 'Demo 1';
+          navCtrl.demoFactory.hideCode()">
+    <a href="#" class="nav__list__link" ng-class="{active: navCtrl.demoFactory.activeButton === 'Demo 1'}">Demo 1</a>
+    </li>
+    <li class="nav__list__item" ng-click="navCtrl.demoFactory.activeButton = 'Demo 2'; navCtrl.demoFactory.hideCode()">
+      <a href="#" class="nav__list__link" ng-class="{active: navCtrl.demoFactory.activeButton === 'Demo 2'}">Demo 2</a>
+    </li>
+    <li class="nav__list__item" ng-click="navCtrl.demoFactory.activeButton = 'Demo 3'; navCtrl.demoFactory.hideCode()">
+      <a href="#" class="nav__list__link" ng-class="{active: navCtrl.demoFactory.activeButton === 'Demo 3'}">Demo 3</a>
+    </li>
+    <li class="nav__list__item" ng-click="navCtrl.demoFactory.activeButton = 'Demo 4'; navCtrl.demoFactory.hideCode()">
+      <a href="#" class="nav__list__link" ng-class="{active: navCtrl.demoFactory.activeButton === 'Demo 4'}">Demo 4</a>
+    </li>
+  </ul>
+</nav>
+<!-- content -->
+<main class="main__container" ng-controller="mainController as mainCtrl">
+  <div ng-if="mainCtrl.demoFactory.activeButton === 'Demo 1'" ng-include="'dist/partials/demo-one.html'"></div>
+  <div ng-if="mainCtrl.demoFactory.activeButton === 'Demo 2'" ng-include="'dist/partials/demo-two.html'"></div>
+  <div ng-if="mainCtrl.demoFactory.activeButton === 'Demo 3'" ng-include="'dist/partials/demo-three.html'"></div>
+  <div ng-if="mainCtrl.demoFactory.activeButton === 'Demo 4'" ng-include="'dist/partials/demo-four.html'"></div> 
+</main>
+<!-- footer -->
+<footer class="footer">
+  <h2 class="footer__copyright">&copy; Kajal Singh</h2>
+  <!-- footer social buttons -->
+  <div class="footer__social-btn">
+    <!-- <a href="https://www.linkedin.com/in/kajal1106" target="_blank"><span class="fa fa-linkedin fa-lg"></span></a> -->
+    <a href="https://codepen.io/kajal1106" target="_blank"><span class="fa fa-codepen fa-lg"></span></a>
+    <a href="https://github.com/kajal1106" target="_blank"><span class="fa fa-github fa-lg"></span></a>
+  </div>
+</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+  <script type="text/javascript" src="dist/js/scripts.min.js"></script>
+  <script type="text/javascript" src="dist/js/app.min.js"></script>
+  <script type="text/javascript" src="dist/js/navController.min.js"></script>
+  <script type="text/javascript" src="dist/js/mainController.min.js"></script>
+  <script type="text/javascript" src="dist/js/demoOneController.min.js"></script>
+  <script type="text/javascript" src="dist/js/demoTwoController.min.js"></script>
+  <script type="text/javascript" src="dist/js/demoThreeController.min.js"></script>
+  <script type="text/javascript" src="dist/js/demoFourController.min.js"></script>
+  <script type="text/javascript" src="dist/js/demoFactory.min.js"></script>
+  <script type="text/javascript" src="dist/js/codeController.min.js"></script>
+
+</body>
+</html>

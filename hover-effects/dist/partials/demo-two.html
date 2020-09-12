@@ -1,0 +1,80 @@
+<!-- demo two -->
+<div ng-controller="demoTwoController as demoTwoCtrl">
+  <section class="flex__container">
+    <!-- image 3 -->
+    <div class="flex__item flex__item--third">
+      <p class="flex__text">Be your own<br><span>freedom</span></p>
+      <img src="dist/images/6.jpg" class="flex__img" alt="">
+    </div>
+    <!-- image 4 -->
+    <div class="flex__item flex__item--fourth">
+      <p class="flex__text">Turn your dreams<br>into<span> reality</span></p>
+      <img src="dist/images/3.jpg" class="flex__img" alt="">
+    </div>
+  </section>
+  
+  <!-- code snippets -->
+  <section class="code__container" ng-show="demoTwoCtrl.demoFactory.codeSnippets.demoTwoCode">
+    <h3 class="code__heading code__heading--html">html</h3>
+    <pre class="pre"><code hljs>
+
+      <!-- Image 1 Demo 2 -->
+    <div class="flex__container">
+      <div class="flex__item flex__item--first">
+        <img src="images/8.jpg" class="flex__img" alt="">
+        <p class="flex__text">Make your <span>every </span>day</p>
+        <p class="flex__text">Become a <span>magical </span>day</p>
+      </div>
+      <!-- Image 2 -->
+        <div class="flex__item flex__item--second">
+          <img src="images/5.jpg" class="flex__img" alt="">
+          <p class="flex__text">Make yourself <span>happy</span></p>
+          <p class="flex__text">with <span>little </span>things</p>
+        </div>
+      </div>
+
+    </code></pre>
+
+    <h3 class="code__heading code__heading--css">css</h3>
+    <pre class="pre"><code hljs>
+
+      /* text #1 */
+      .flex__item:nth-child(1) .flex__text:nth-child(2),
+      .flex__item:nth-child(1) .flex__text:nth-child(3)  {
+        width: 240px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        border: 1px solid #6bbcf2;
+        font-size: 1.3em;
+        opacity: 0.5;
+        transition: all .9s cubic-bezier(.25,.25,.52,1.30);
+      }
+      .flex__item:nth-child(1) .flex__text:nth-child(2) {
+        top: 3.9em;
+        left: -100%;
+        padding-bottom: 5px;
+        border-bottom: 0;
+        background: linear-gradient(to top, rgba(3,3,3,0.5), rgba(41,65,107,0.5));
+      }
+      .flex__item:nth-child(1) .flex__text:nth-child(3)  {
+        bottom: 3.9em;
+        right: -100%;
+        padding-top: 5px;
+        border-top: 0;
+        background: linear-gradient(to bottom, rgba(3,3,3,0.5), rgba(41,65,107,0.5));
+      }
+      .flex__item:hover:nth-child(1) .flex__text:nth-child(2) {
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+      }
+      .flex__item:hover:nth-child(1) .flex__text:nth-child(3) {
+        right: 50%;
+        transform: translateX(50%);
+        opacity: 1;
+      }
+
+    </pre></code>
+  </section>
+  <button class="flex__button" ng-bind="demoTwoCtrl.demoFactory.changeText()" ng-click="demoTwoCtrl.showCode()">Show code</button>
+</div>
